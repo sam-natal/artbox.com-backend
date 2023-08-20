@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Art;
+use App\Models\Artist;
+use Illuminate\Support\Facades\DB;
+
 
 class ArtController extends Controller
 {
@@ -18,6 +21,7 @@ class ArtController extends Controller
         ]);
     }
 
+    //A function to add an art to the customers website
     public function addart(Request $request)
     {
         $file = $request->hasFile('image');
@@ -35,6 +39,7 @@ class ArtController extends Controller
                     'category_id' => $request->category,
                     'orientation' => $request->orientation,
                     'price' => $request->price,
+                    'artistID' => $request->artist,
                     'image_path' => $file_path,
                 ]
 
@@ -42,6 +47,63 @@ class ArtController extends Controller
         }
 
         return redirect('/allarts');
+    }
+
+    //A function to save edited art to the database
+    public function edited_art(Request $request)
+    {
+        $file = $request->hasFile('image');
+        if ($file) {
+            $newfile = $request->file('image');
+            $file_path = $newfile->store('public/images');
+
+            Art::where('id', $request->id)
+                ->update(
+                    [
+                        'title' => $request->title,
+                        'description' => $request->description,
+                        'width' => $request->width,
+                        'height' => $request->height,
+                        'category_id' => $request->category,
+                        'orientation' => $request->orientation,
+                        'price' => $request->price,
+                        'artistID' => $request->artist,
+                        'image_path' => $file_path,
+                    ]
+                );
+        } else {
+
+            Art::where('id', $request->id)
+                ->update(
+                    [
+                        'title' => $request->title,
+                        'description' => $request->description,
+                        'width' => $request->width,
+                        'height' => $request->height,
+                        'category_id' => $request->category,
+                        'orientation' => $request->orientation,
+                        'price' => $request->price,
+                        'artistID' => $request->artist,
+                    ]
+                );
+        }
+        return redirect('/allarts');
+    }
+
+
+    //A function to delete an art from the art database
+    public function delete_art(Request $request)
+    {
+        Art::where('id', '=', $request->id)->delete();
+        return redirect('/allarts');
+    }
+
+    //A function to delete an art from the art database
+    public function edit_art(Request $request)
+    {
+        $art = Art::where('id', '=', $request->id)->get();
+        $artists = Artist::all();
+        return view('edit_art', compact('art', 'artists'));
     }
 
     //A function to respond requests from search input button
@@ -65,6 +127,18 @@ class ArtController extends Controller
     {
         $arts = Art::where('category_id', $request->catID)
             ->where('id', '<>', $request->id)
+            ->get();
+
+        return response()->json([
+            'status' => 200,
+            'arts' => $arts,
+        ]);
+    }
+
+    //A function for retrieving arts made by a particular artist.
+    function fetchArtsByArtistID(Request $request)
+    {
+        $arts = Art::where('artistID', $request->id)
             ->get();
 
         return response()->json([
@@ -141,8 +215,10 @@ class ArtController extends Controller
     //A function for fetching a specific art work by an ID
     function fetchArtById(Request $request)
     {
-        $arts = Art::where('id', $request->id)
+        $arts = DB::table('artists')
+            ->join('art', 'artists.id', '=', 'art.artistID')
             ->join('art_category', 'art.category_id', '=', 'art_category.category_id')
+            ->where('art.id', $request->id)
             ->get();
 
         return response()->json([

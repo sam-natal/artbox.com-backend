@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\WishController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\OrderItemController;
 use App\Http\Controllers\ArtController;
+use App\Http\Controllers\ArtistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,9 +28,13 @@ Route::post('showWishes', [WishController::class, 'index']); //Route for adding 
 Route::post('deleteWish', [WishController::class, 'deleteWish']); //Route for adding a customer art wish to a database.
 Route::post('checkWish', [WishController::class, 'checkWish']); //Route for adding a customer art wish to a database.
 
+Route::get('view-artists', [ArtistController::class, 'get_artists']);
+Route::post('fetchArtistById', [ArtistController::class, 'fetchArtistById']);
+
 Route::get('view-art', [ArtController::class, 'index']);
 Route::post('search', [ArtController::class, 'search']);
 Route::post('fetchArtByCategory', [ArtController::class, 'fetchArtByCategory']);
+Route::post('fetchArtsByArtistID', [ArtController::class, 'fetchArtsByArtistID']);
 Route::post('orientationFilter', [ArtController::class, 'orientationFilter']);
 Route::post('sizeFilter', [ArtController::class, 'sizeFilter']);
 Route::post('priceFilter', [ArtController::class, 'priceFilter']);

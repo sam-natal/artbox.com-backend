@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Art extends Model
+class Artist extends Model
 {
     use HasFactory;
 
@@ -15,14 +15,11 @@ class Art extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'title',
-        'description',
-        'width',
-        'height',
-        'category_id',
-        'orientation',
-        'price',
-        'artist',
-        'image_path',
+        'first_name',
+        'last_name',
+        'email',
+        'phone',
+        'bio',
+        'profile_picture',
     ];
 }

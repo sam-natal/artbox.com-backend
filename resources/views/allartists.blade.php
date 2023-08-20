@@ -20,28 +20,26 @@
                     <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality initialized in js/pages/be_tables_datatables.js -->
 
                     <div class="row">
-                        @foreach ($arts as $art)
+                        @foreach ($artists as $artist)
                         <div class="col-md-3 mt-3">
                             <div class="card text-left" style="box-shadow: 5px 6px 5px 5px #f2f2f2;">
-                                <img style="width: 200px;" class="card-img-top p-3" src="{{ Storage::url($art->image_path) }}" alt="">
+                                <img style="width: 200px;" class="card-img-top p-3" src="{{ Storage::url($artist->profile_picture) }}" alt="">
                                 <div class="card-body p-3">
-                                    <h4 class="card-title"><label>Title: </label>{{' '.$art->title}}</h4>
-                                    <h4 class="card-text"><label>Description:</label>{{' '.$art->description}}</h4>
-                                    <h4 class="card-text"><label>Width:</label>{{' '.$art->width}}</h4>
-                                    <h4 class="card-text"><label>Height:</label>{{' '.$art->height}}</h4>
-                                    <h4 class="card-text"><label>Category:</label>{{' '.$art->category_id}}</h4>
-                                    <h4 class="card-text"><label>Orientation:</label>{{' '.$art->orientation}}</h4>
-                                    <h4 class="card-text"><label>Price:</label>{{' $ '.$art->price}}</h4>
+                                    <h4 class="card-title"><label>First Name: </label>{{' '.$artist->first_name}}</h4>
+                                    <h4 class="card-text"><label>Last Name:</label>{{' '.$artist->last_name}}</h4>
+                                    <h4 class="card-text"><label>Email:</label>{{' '.$artist->email}}</h4>
+                                    <h4 class="card-text"><label>Phone:</label>{{' '.$artist->phone}}</h4>
+                                    <h4 class="card-text"><label>Bio:</label>{{' '.$artist->bio}}</h4>
 
-                                    <form method="post" action="/delete_art" enctype="multipart/form-data" style="display: inline-block;">
+                                    <form method="post" action="/delete_artist" enctype="multipart/form-data" style="display: inline-block;">
                                         @csrf
-                                        <input type="hidden" class="form-control" name="id" value="{{$art->id}}" required='true'>
+                                        <input type="hidden" class="form-control" name="id" value="{{$artist->id}}" required='true'>
                                         <button type="submit" class="btn btn-outline-danger btn-md">DELETE</button>
                                     </form>
 
-                                    <form method="post" action="/edit_art" enctype="multipart/form-data" style="display: inline-block;">
+                                    <form method="post" action="/edit_artist" enctype="multipart/form-data" style="display: inline-block;">
                                         @csrf
-                                        <input type="hidden" class="form-control" name="id" value="{{$art->id}}" required='true'>
+                                        <input type="hidden" class="form-control" name="id" value="{{$artist->id}}" required='true'>
                                         <button type="submit" class="btn btn-outline-primary btn-md">EDIT</button>
                                     </form>
                                 </div>

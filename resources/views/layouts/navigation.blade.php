@@ -53,6 +53,18 @@
                                 </ul>
                             </li>
 
+                            <li>
+                                <a class="nav-submenu" data-toggle="nav-submenu"><i class="si si-puzzle"></i><span class="sidebar-mini-hide"></span>ARTISTS</a>
+                                <ul>
+                                    <li>
+                                        <a href="{{ url('/addartist') }}">Add artist</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/allartists') }}">Manage artists</a>
+                                    </li>
+                                </ul>
+                            </li>
+
                             <li class="open">
                                 <a href="{{ url('/sales') }}"><i class="si si-cup"></i><span class="sidebar-mini-hide">Orders & Sales</span></a>
                             </li>
