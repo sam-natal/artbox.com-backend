@@ -3,8 +3,8 @@
         <x-slot name="logo">
             <a href="/">
                 <!-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> -->
-                <img src="{{asset('/images/Art_Box_Logo-removebg-preview.png')}}"  alt="">
-            </a>          
+                <img src="{{asset('/images/Art_Box_Logo-removebg-preview.png')}}" alt="">
+            </a>
         </x-slot>
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -38,7 +38,11 @@
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <x-primary-button class="ml-3">
+                {{ __('Log in') }}
+            </x-primary-button>
+
+            <div class="flex items-center justify-center mt-4">
                 @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
@@ -49,12 +53,7 @@
                     {{ __('Not registered?') }}
                 </a>
 
-                <x-primary-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-primary-button>
             </div>
-
-
         </form>
     </x-auth-card>
 </x-guest-layout>

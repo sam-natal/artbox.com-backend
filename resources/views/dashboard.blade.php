@@ -16,7 +16,7 @@
                         <div class="block-content ribbon ribbon-bookmark ribbon-crystal ribbon-left bg-gd-dusk">
                             <div class="ribbon-box">12</div>
                             <p class="mt-5">
-                                <img style="width: 50px; position:relative; left:165px;" src="assets/img/icons/icons8-sale-64.png" alt="" />
+                                <img style="width: 50px; position:relative; left:42%;" src="assets/img/icons/icons8-sale-64.png" alt="" />
                             </p>
                             <p class="font-w600 text-white">
                                 Weekly Sales
@@ -29,7 +29,7 @@
                         <div class="block-content ribbon ribbon-bookmark ribbon-crystal ribbon-left bg-gd-dusk">
                             <div class="ribbon-box">12</div>
                             <p class="mt-5">
-                                <img style="width: 50px; position:relative; left:165px;" src="assets/img/icons/icons8-calling-64.png" alt="" />
+                                <img style="width: 50px; position:relative; left:42%;" src="assets/img/icons/icons8-calling-64.png" alt="" />
                             </p>
                             <p class="font-w600 text-white">
                                 Weekly Orders
@@ -44,7 +44,7 @@
                             <div class="ribbon-box">{{ $totalArts}}</div>
                             <p class="mt-5">
                                 <!-- <i class="si si-target fa-3x text-white-op"></i> -->
-                                <img style="width: 50px; position:relative; left:165px;" src="assets/img/icons/icons8-art-64.png" alt="" />
+                                <img style="width: 50px; position:relative; left:42%;" src="assets/img/icons/icons8-art-64.png" alt="" />
                             </p>
                             <p class="font-w600 text-white">
                                 Arts
@@ -64,7 +64,7 @@
                         <div class="block-content ribbon ribbon-bookmark ribbon-crystal ribbon-left bg-gd-dusk">
                             <div class="ribbon-box">50</div>
                             <p class="mt-5">
-                                <img style="width: 50px; position:relative; left:165px;" src="assets/img/icons/icons8-messages-64.png" alt="" />
+                                <img style="width: 50px; position:relative; left:42%;" src="assets/img/icons/icons8-messages-64.png" alt="" />
                             </p>
                             <p class="font-w600 text-white">
                                 New messages
@@ -78,7 +78,7 @@
                         <div class="block-content ribbon ribbon-bookmark ribbon-crystal ribbon-left bg-gd-dusk">
                             <div class="ribbon-box">90000</div>
                             <p class="mt-5">
-                                <img style="width: 50px; position:relative; left:165px;" src="assets/img/icons/icons8-customer-royalty-64.png" alt="" />
+                                <img style="width: 50px; position:relative; left:42%;" src="assets/img/icons/icons8-customer-royalty-64.png" alt="" />
                             </p>
                             <p class="font-w600 text-white">
                                 Customers
@@ -93,7 +93,7 @@
                             <div class="ribbon-box">12</div>
                             <p class="mt-5">
                                 <!-- <i class="si si-bubbles fa-3x text-white-op"></i> -->
-                                <img style="width: 50px; position:relative; left:165px;" src="assets/img/icons/icons8-revenue-64.png" alt="" />
+                                <img style="width: 50px; position:relative; left:42%;" src="assets/img/icons/icons8-revenue-64.png" alt="" />
                             </p>
                             <p class="font-w600 text-white">
                                 Revenues
@@ -113,7 +113,7 @@
                         <div class="block-content ribbon ribbon-bookmark ribbon-crystal ribbon-left bg-gd-dusk">
                             <div class="ribbon-box">{{ $totalArtists}}</div>
                             <p class="mt-5">
-                                <img style="width: 50px; position:relative; left:165px;" src="assets/img/icons/icons8-artist-96.png" alt="" />
+                                <img style="width: 50px; position:relative; left:42%;" src="assets/img/icons/icons8-artist-96.png" alt="" />
                             </p>
                             <p class="font-w600 text-white">
                                 Artists
